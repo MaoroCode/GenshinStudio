@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
+    branches: [ master ]
     tags: [ '*' ]
-
   workflow_dispatch:
 
 jobs:
@@ -50,23 +50,23 @@ jobs:
       - name: Upload .Net5 Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: net5.0-windows
+          name: net5.0-windows-gui
           path: AssetStudioGUI/bin/Release/net5.0-windows/publish
 
       - name: Upload .Net6 Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: net6.0-windows
+          name: net6.0-windows-gui
           path: AssetStudioGUI/bin/Release/net6.0-windows/publish
 
       - name: Upload .Net5 CLI Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: net5.0-windows
+          name: net5.0-windows-cli
           path: AssetStudioCLI/bin/Release/net5.0-windows/publish
 
-      - name: Upload .Net6 Artifact
+      - name: Upload .Net6 CLI Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: net6.0-windows
+          name: net6.0-windows-cli
           path: AssetStudioCLI/bin/Release/net6.0-windows/publish
